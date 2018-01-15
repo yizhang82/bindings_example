@@ -9,4 +9,8 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 
 add_library(FASTINT_DLL SHARED main.c)
 set_target_properties(FASTINT_DLL PROPERTIES OUTPUT_NAME "fastint")
+
+# Python/C extension need to have .pyd extension
+set_target_properties(FASTINT_DLL PROPERTIES SUFFIX ".pyd")
+
 target_link_libraries(FASTINT_DLL ${PYTHON_LIBRARIES})
