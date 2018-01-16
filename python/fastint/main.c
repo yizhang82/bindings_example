@@ -53,7 +53,7 @@ FastInt_init(FastIntObject *self, PyObject *args, PyObject *kwds)
 }
 
 static PyObject *
-FastInt_add(FastIntObject *self, PyObject *args)
+FastInt_inc(FastIntObject *self, PyObject *args)
 {
     int operand;
     if (! PyArg_ParseTuple(args, "i", &operand))
@@ -66,8 +66,8 @@ FastInt_add(FastIntObject *self, PyObject *args)
 }
 
 static PyMethodDef FastInt_methods[] = {
-    { "inc", (PyCFunction) FastInt_add, METH_VARARGS, "inc method" },
-    {NULL}
+    { "inc", (PyCFunction) FastInt_inc, METH_VARARGS, "inc method" },
+    { NULL }
 };
 
 static PyMemberDef FastInt_members[] = {
