@@ -2,6 +2,10 @@ cmake_minimum_required (VERSION 2.6)
 project (fastint C)
 set(CMAKE_CXX_STANDARD 14)
 
+if(APPLE)
+   set(CMAKE_MACOSX_RPATH 1)
+endif(APPLE)
+
 # Locate python package - note that you need have a matching bitness of python
 find_package(PythonLibs 2.7 REQUIRED)
 
